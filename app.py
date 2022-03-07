@@ -13,7 +13,7 @@ async def mytask():
     
     channel = client.get_guild(ID_SERVER).get_channel(ID_CHANNEL)
     strings = time.strftime("%H,%M")
-    if strings in ["10,00","11,00","14,30","16,00"]:
+    if strings in ["10,00","11,00","14,30","16,00","17:02"]:
         await channel.send("Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")
         
 client.run(TOKEN)
