@@ -10,8 +10,8 @@ import os
 # ID_CHANNEL = int(os.getenv('ID_CHANNEL'))
 # TOKEN =os.getenv('TOKEN')
 
-ID_SERVER = os.environ['ID_SERVER']
-ID_CHANNEL = os.environ['ID_CHANNEL']
+ID_SERVER = int(os.environ['ID_SERVER'])
+ID_CHANNEL = int(os.environ['ID_CHANNEL'])
 TOKEN = os.environ['TOKEN']
 
 client = discord.Client()
@@ -24,7 +24,7 @@ async def on_ready():
 async def mytask():
     channel = client.get_guild(ID_SERVER).get_channel(ID_CHANNEL)
     strings = time.strftime("%H,%M")
-    if strings in ["10,29","11,00","14,30","16,00","17:02"]:
+    if strings in ["10,32","11,00","14,30","16,00","17:02"]:
         await channel.send("Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")
         
 client.run(TOKEN)
