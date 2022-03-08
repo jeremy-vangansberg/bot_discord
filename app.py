@@ -14,6 +14,8 @@ ID_SERVER = int(os.environ['ID_SERVER'])
 ID_CHANNEL = int(os.environ['ID_CHANNEL'])
 TOKEN = os.environ['TOKEN']
 
+print(ID_SERVER, ID_CHANNEL, TOKEN)
+
 client = discord.Client()
 
 @client.event
