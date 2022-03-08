@@ -14,7 +14,7 @@ ID_SERVER = int(os.environ['ID_SERVER'])
 ID_CHANNEL = int(os.environ['ID_CHANNEL'])
 TOKEN = os.environ['TOKEN']
 
-print(ID_SERVER, ID_CHANNEL, TOKEN)
+print(type(ID_SERVER), type(ID_CHANNEL), type(TOKEN))
 
 client = discord.Client()
 
