@@ -29,7 +29,7 @@ async def mytask():
     strings = time.strftime("%H:%M")
     today = datetime.date.today().isoweekday()
     if today in [1,2,3,4,5] :
-        if strings in ["09:00","10:00","13:30","15:00"] :
+        if strings in ["08:00","90:00","12:30","14:00"] :
             await channel.send("Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")       
 
 client.run(TOKEN)
