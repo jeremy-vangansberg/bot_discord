@@ -18,9 +18,9 @@ def loop():
     strings = time.strftime("%H:%M")
     today = datetime.date.today().isoweekday()
     if today in [1,2,3,4,5] :
-        if strings in ["09:00","11:11", "9:57", "11:59","10:00"] :
+        if strings in ["08:00", "09:00", "13:00", "14:00"] :
             webhook = Webhook.from_url(DISCORD_WEBHOOK, adapter=RequestsWebhookAdapter())
-            webhook.send("[test-bot-dockerized]Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")      
+            webhook.send("Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")      
 
 print(time.strftime("%H:%M"))
 
