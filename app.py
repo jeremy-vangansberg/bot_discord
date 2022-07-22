@@ -14,17 +14,27 @@ from discord import Webhook, RequestsWebhookAdapter, Embed
 
 DISCORD_WEBHOOK = "https://discord.com/api/webhooks/993440182185504804/QUY7fkpaLFIMIfr6tVSzC8PuX5bdyfZOXA_xfZXtxfqr-LagxjoSlvSIHqp-axF8chBp"
 
+
 def loop():
     strings = time.strftime("%H:%M")
     today = datetime.date.today().isoweekday()
-    if today in [1,2,3,4,5] :
-        if strings in ["08:00", "09:00", "13:00", "14:00"] :
-            webhook = Webhook.from_url(DISCORD_WEBHOOK, adapter=RequestsWebhookAdapter())
-            webhook.send("Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")      
+    dls = time.localtime().tm_isdst
+    hours_summer = ["08:00", "09:00", "13:00", "14:00"]
+    hours_winter = ["09:00", "10:00", "14:00", "15:00"]
+    if today in [1, 2, 3, 4, 5]:
+        # Vérification si heure d'été ou heure d'hiver
+        if dls:
+            hours = hours_summer
+        else:
+            hours = hours_winter
 
-print(time.strftime("%H:%M"))
+        if strings in hours:
+            webhook = Webhook.from_url(
+                DISCORD_WEBHOOK, adapter=RequestsWebhookAdapter())
+            webhook.send(
+                "Rappel : n'oubliez pas de signer sur SWS <@&913805722511355965>")
 
-while True : 
+
+while True:
     loop()
     time.sleep(60)
-
